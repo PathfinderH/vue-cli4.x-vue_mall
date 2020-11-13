@@ -51,12 +51,15 @@ import {
     NumberKeyboard,
     DropdownMenu,
     DropdownItem,
-    NoticeBar
+    NoticeBar,
+    PullRefresh
+
+
 } from 'vant';
 
 
 
-
+Vue.use(PullRefresh);
 Vue.use(NoticeBar);
 Vue.use(DropdownMenu);
 Vue.use(DropdownItem);

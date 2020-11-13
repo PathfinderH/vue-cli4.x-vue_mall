@@ -107,6 +107,8 @@ export default {
   },
 
   created() {
+    this.$store.dispatch("getDatabaseInfo", "orderForm");
+
     this.getOrderForm();
   },
 
@@ -161,6 +163,7 @@ export default {
       return arr;
     },
 
+    //搜索订单
     onSearch() {
       if (this.value == "") return this.$toast("请输入搜索关键词~");
       // console.log(this.query(this.value));

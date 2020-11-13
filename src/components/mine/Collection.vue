@@ -118,6 +118,8 @@ export default {
   },
 
   created() {
+    this.$store.dispatch("getDatabaseInfo", "collection");
+
     this.getCollectionList();
     this.$store.commit("getCollAllSelected_false"); //判断全选按钮
   },
@@ -161,7 +163,6 @@ export default {
       );
       if (res.status != 200) return this.$toast.fail("获取数据失败");
       this.collectionlist = res.data.reverse();
-      
     },
 
     //查询函数

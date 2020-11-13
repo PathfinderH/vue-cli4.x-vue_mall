@@ -69,9 +69,10 @@ export default {
     };
   },
   created() {
+    this.$store.dispatch("getDatabaseInfo", "address");
+
     this.list = this.$store.state.address;
-    // console.log(this.info.info);
-    console.log(this.$store.state.address);
+
   },
   methods: {
     //关闭弹出框清空表单
@@ -117,8 +118,7 @@ export default {
 
       //修改地址操作
       if (this.popup_flag) {
-     
-     //将修改的表单数据提交到vuex中进行保存
+        //将修改的表单数据提交到vuex中进行保存
         this.$store.commit("editAdress", info);
 
         //清空表单
@@ -131,7 +131,6 @@ export default {
 
         //新增用户操作
       } else if (!this.popup_flag) {
-        
         this.$store.commit("saveAdress", info);
         this.address_info = {};
         this.$toast.success("保存成功");
@@ -143,11 +142,10 @@ export default {
     },
     //删除地址
     onDelete(content) {
-      
       this.$store.commit("deleteAdress", content.id);
       this.show = false;
       this.$toast.success("删除成功");
-      
+
       this.$store.dispatch("updateDatabaseInfo", "address");
     },
   },

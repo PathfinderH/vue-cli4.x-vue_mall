@@ -93,7 +93,7 @@ export default {
   width: 40px;
   height: 40px;
   padding: 2px;
-  border: 1px solid lightgray;
+  box-shadow: 0 1px 3px rgba(18, 18, 18, 0.1);
   border-radius: 50%;
   text-align: center;
   font-size: 12px;

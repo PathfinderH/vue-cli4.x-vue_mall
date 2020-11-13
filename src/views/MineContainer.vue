@@ -12,7 +12,7 @@
             /></van-col>
             <van-col span="12"
               ><h3>
-                用户：{{ $store.state.currentUser[0].username }}
+                用户：{{ $store.state.currentUser[0].username || null}}
               </h3></van-col
             >
             <van-col span="6" class="set"

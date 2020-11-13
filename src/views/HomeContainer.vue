@@ -192,7 +192,7 @@
                   <!-- <span></span> -->
                   <span class="price">￥{{ item.price }}</span>
                   <span class="people_buy"
-                    >{{ item.people_buy }}人已经购买</span
+                    >{{ item.people_buy }}人已购买</span
                   >
                 </div>
               </router-link>

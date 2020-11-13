@@ -54,3 +54,8 @@ new Vue({
     router,
     store,
 })
+
+window.addEventListener('storage', function() {
+    localStorage.clear();
+    location.reload();
+});

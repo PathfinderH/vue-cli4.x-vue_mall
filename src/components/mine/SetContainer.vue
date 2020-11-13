@@ -74,8 +74,11 @@ export default {
     //退出登录
     logOut() {
       this.$store.commit("removeProduct", []);
-      localStorage.clear();
+      this.$store.commit("removeCollectionMore", []);
       this.$store.commit("currentUser", []);
+
+      localStorage.clear();
+
       this.$router.push("/login");
     },
   },

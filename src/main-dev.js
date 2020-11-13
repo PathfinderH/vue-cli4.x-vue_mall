@@ -27,7 +27,7 @@ import 'nprogress/nprogress.css'
 import axios from 'axios'
 
 //axios全局配置公共请求地址
-axios.defaults.baseURL = 'http://192.168.1.111:3000'
+axios.defaults.baseURL = 'http://39.99.195.220/'
 
 
 
