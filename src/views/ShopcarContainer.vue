@@ -125,8 +125,6 @@ export default {
   },
 
   created() {
-    this.$store.dispatch("getDatabaseInfo", "car");
-
     this.getShopcarList();
     this.getShopcarLength();
     this.$store.commit("getAllSelected_false");

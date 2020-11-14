@@ -167,8 +167,7 @@ export default {
     };
   },
   created() {
-    this.$store.dispatch("getDatabaseInfo", "historySearch");
-
+   
     this.getHistorySearch();
 
     // 点击分类页中的商品自动搜索

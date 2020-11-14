@@ -4,7 +4,7 @@
     <van-nav-bar
       title="我的收货地址"
       :border="false"
-      @click-left="$router.back(-1)"
+      @click-left="$router.go(-1)"
     >
       <template #left>
         <van-icon name="arrow-left" color="#999" />
@@ -68,13 +68,17 @@ export default {
       head_title: "", //弹出的表单标题
     };
   },
+  
   created() {
-    this.$store.dispatch("getDatabaseInfo", "address");
-
-    this.list = this.$store.state.address;
-
+    this.getAddress();
   },
+
   methods: {
+    //获取用户地址
+    getAddress() {
+      this.list = this.$store.state.address;
+    },
+
     //关闭弹出框清空表单
     close() {
       this.address_info = {};
@@ -139,6 +143,9 @@ export default {
 
       //只要表单被修改  就将vuex中的数据提交到数据库保存
       this.$store.dispatch("updateDatabaseInfo", "address");
+      this.getAddress();
+
+      console.log(this.list);
     },
     //删除地址
     onDelete(content) {
@@ -147,6 +154,8 @@ export default {
       this.$toast.success("删除成功");
 
       this.$store.dispatch("updateDatabaseInfo", "address");
+
+      this.getAddress();
     },
   },
 };

@@ -118,7 +118,6 @@ export default {
   },
 
   created() {
-    this.$store.dispatch("getDatabaseInfo", "collection");
 
     this.getCollectionList();
     this.$store.commit("getCollAllSelected_false"); //判断全选按钮

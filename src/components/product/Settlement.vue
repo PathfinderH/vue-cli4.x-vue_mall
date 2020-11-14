@@ -260,8 +260,8 @@ export default {
         idArr.push(this.$store.state.directBuyGoods.id);
       }
 
-      //如果结算商品为空则直接返回
-      if (idArr.length == 0 || idArr[0] == null)
+      //如果结算商品为空则直接返回购物车
+      if (idArr.length == 0)
         return this.$router.push("/shopcar");
 
       const { data: res } = await this.$axios.get(
@@ -312,13 +312,7 @@ export default {
     },
   },
 
-  computed: {
-    settlementData() {
-      var settList = [];
-      settList = JSON.parse(JSON.stringify(this.settlementList)); //this.templateData是父组件传递的对象
-      return settList;
-    },
-  },
+
   filters: {
     //处理小数
     rounding(value) {

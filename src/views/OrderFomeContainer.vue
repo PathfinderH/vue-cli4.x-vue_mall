@@ -107,8 +107,6 @@ export default {
   },
 
   created() {
-    this.$store.dispatch("getDatabaseInfo", "orderForm");
-
     this.getOrderForm();
   },
 
@@ -137,7 +135,7 @@ export default {
           list: [],
         },
       ];
-      // this.orderFormList = this.$store.state.orderForm;
+      
       this.$store.state.orderForm.forEach((item) => {
         if (item[0].selected) {
           orderlist[3].list.push(item);
@@ -147,7 +145,6 @@ export default {
         }
       });
       this.orderFormList = orderlist;
-      //  console.log(this.orderFormList);
     },
 
     //搜索订单
