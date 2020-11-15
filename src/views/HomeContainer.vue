@@ -499,6 +499,7 @@ span {
       background-color: #f9f5ee;
       border-radius: 10px;
       padding: 0 5px;
+      margin-left: 5px;
     }
   }
   .img-wrapper {

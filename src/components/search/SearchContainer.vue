@@ -83,7 +83,7 @@
           :origin-price="item.original_price"
           :title="item.title"
           :thumb="$axios.defaults.baseURL + item.img_url"
-          :thumb-link="'/#/home/product' + item.id"
+          :thumb-link="'/#/home/product/' + item.id"
         >
           <template #bottom>
             <van-row align="center">
@@ -169,11 +169,10 @@ export default {
   created() {
    
     this.getHistorySearch();
-
     // 点击分类页中的商品自动搜索
     if (this.search == "") return;
     this.value = this.search;
-    this.onSearch();
+    // this.onSearch();
   },
 
   methods: {
@@ -300,9 +299,8 @@ export default {
         return this.$toast("请输入搜索内容~");
       } else {
         this.setHistory(this.value);
-      }
-
-      this.getSearchResult(this.value);
+        this.getSearchResult(this.value);
+      } 
     },
 
     //监听搜索框为空时
@@ -340,7 +338,6 @@ export default {
 <style lang="less" scoped>
 //搜索框样式
 .van-search {
-  // border-bottom: 1px solid #e1e2e4;
   position: fixed;
   top: 0;
   z-index: 99;
@@ -355,7 +352,7 @@ export default {
   }
 }
 
-//搜索发现
+//热门搜索 历史搜索
 .search-found {
   padding: 0 15px;
   margin-top: 55px;
@@ -373,7 +370,7 @@ export default {
   .van-tag--primary {
     border-radius: 3px;
     padding: 3px 10px;
-    margin: 0 5px 5px 0;
+    margin: 0px 5px 5px 0;
   }
 }
 
@@ -419,7 +416,6 @@ export default {
 }
 
 .van-card {
-  // margin-top: 0px;
   margin: 0 !important;
   border-bottom: 0.5px solid #eeeeee;
   box-sizing: border-box;
